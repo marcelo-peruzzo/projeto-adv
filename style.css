@@ -139,7 +139,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 /* Global Styles */
 /* line 5, sass/libs/_global.scss */
-body { font-family: Arial, sans-serif; font-size: 16px; font-weight: 300; line-height: 1.5; color: #888; background-color: #003940f0; }
+body { font-family: Arial, sans-serif; font-size: 16px; font-weight: 300; line-height: 1.5; color: #FFF; background-color: #003940f0; }
 
 /* line 17, sass/libs/_global.scss */
 h1, h2, h3, h4, h5, h6 { margin-top: 0; color: #FFFFFF; font-family: "Novecento Sans", "Open Sans", sans-serif; font-weight: 600; text-transform: uppercase; }
@@ -209,9 +209,9 @@ form input[type="submit"]:hover, form input[type="submit"]:active, form input[ty
 /* line 82, sass/libs/_components.scss */
 .feature header .feature-icon, .feature header .feature-title-copy { display: inline-block; vertical-align: top; }
 /* line 86, sass/libs/_components.scss */
-.feature header .feature-icon { margin-right: 20px; }
+.feature header .feature-icon { margin-right: 20px; filter: hue-rotate(43deg);}
 /* line 88, sass/libs/_components.scss */
-.feature header .feature-title { font-size: 24px; font-size: 1.5em; color: white; margin-bottom: 0; line-height: 1; }
+.feature header .feature-title { font-size: 24px; font-size: 1.2em; color: white; margin-bottom: 0; line-height: 1; }
 /* line 94, sass/libs/_components.scss */
 .feature header .feature-subtitle { font-size: 12px; font-size: 0.75em; color: #888; text-transform: uppercase; }
 /* line 101, sass/libs/_components.scss */
@@ -255,7 +255,7 @@ form input[type="submit"]:hover, form input[type="submit"]:active, form input[ty
 /* line 179, sass/libs/_components.scss */
 .quote-slider .slides cite { font-style: normal; text-transform: uppercase; font-family: "Novecento Sans", "Open Sans", sans-serif; }
 /* line 184, sass/libs/_components.scss */
-.quote-slider .slides span { color: #4c4c4c; text-transform: uppercase; }
+.quote-slider .slides span { color: #c6b52d; text-transform: uppercase; }
 /* line 190, sass/libs/_components.scss */
 .quote-slider .flex-control-paging { margin-left: 200px; list-style: none; padding-left: 0; }
 @media screen and (max-width: 640px) { /* line 190, sass/libs/_components.scss */
@@ -373,6 +373,9 @@ form input[type="submit"]:hover, form input[type="submit"]:active, form input[ty
 
 /* line 10, sass/libs/bootstrap-grid/_grid.scss */
 .container { margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; *zoom: 1; }
+.menu-container { display: flex; justify-content: space-between;
+  align-items: center;}
+.menu-container::after{display: none!important;}
 /* line 4, sass/libs/_mixins.scss */
 .container:after { content: " "; clear: both; display: block; overflow: hidden; height: 0; }
 @media (min-width: 768px) { /* line 10, sass/libs/bootstrap-grid/_grid.scss */
@@ -976,7 +979,7 @@ form input[type="submit"]:hover, form input[type="submit"]:active, form input[ty
   .hidden-print { display: none !important; } }
 /* Header Styles */
 /* line 5, sass/layout/_header.scss */
-.site-header { background-color: #003940; color: white; padding: 30px 0; margin-bottom: 30px; }
+.site-header { background-color: #003940; color: white; padding: 20px 0; }
 
 /* line 13, sass/layout/_header.scss */
 #branding { float: left; }
@@ -985,7 +988,7 @@ form input[type="submit"]:hover, form input[type="submit"]:active, form input[ty
 /* line 20, sass/layout/_header.scss */
 #branding .logo { 
   margin-right: 10px;
-  width: 120px;
+  width: 100px;
 }
 /* line 23, sass/layout/_header.scss */
 #branding .site-title { margin: 0; font-size: 14px; font-size: 0.875em; font-weight: 600; text-transform: uppercase; line-height: 1; }
@@ -1051,11 +1054,14 @@ form input[type="submit"]:hover, form input[type="submit"]:active, form input[ty
 /* line 35, sass/layout/_content.scss */
 .hero img { display: block; max-width: 100%; }
 /* line 39, sass/layout/_content.scss */
-.hero .hero-content { margin-top: 40%; }
 @media screen and (max-width: 990px) { /* line 39, sass/layout/_content.scss */
   .hero .hero-content { margin-top: 0; padding: 50px 0; } }
 /* line 47, sass/layout/_content.scss */
-.hero .hero-title { text-transform: uppercase; font-weight: 600; font-size: 36px; font-size: 2.25em; }
+.hero .hero-title { text-transform: uppercase;
+  font-weight: 600;
+  font-size: 36px;
+  font-size: 3.25em;
+  line-height: 60px;}
 /* line 52, sass/layout/_content.scss */
 .hero p { font-size: 16px; font-size: 1em; line-height: 1.5; margin-bottom: 30px; }
 
@@ -1102,4 +1108,29 @@ form input[type="submit"]:hover, form input[type="submit"]:active, form input[ty
 /* line 98, sass/layout/_footer.scss */
 .copy { font-size: 14px; font-size: 0.875em; color: #494949; }
 
-/*# sourceMappingURL=style.css.map */
+.hero {
+  padding: 30px 0;
+  background: url(images/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 98px);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero::before {
+  position: absolute;
+  content: "";
+  background: #0f454bd9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.copy{
+  color: #FFF;
+}
+
+.copy p{color: #FFF;}
